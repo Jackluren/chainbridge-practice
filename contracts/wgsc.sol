@@ -12,7 +12,8 @@ contract WGSC is ERC20, ERC20Burnable, Ownable {
     constructor() ERC20("WGSC", "WGSC") {}
 
     function mint(address _to) external payable {
-        require(msg.value >= 100000, "ERROR: less then minimum amount that can be crossed");
+        // 0.01 GSC
+        require(msg.value >= 1 * 10 ** 16, "ERROR: less then minimum amount that can be crossed");
 
         _mint(msg.sender, msg.value);
         deposit[msg.sender] += msg.value;
