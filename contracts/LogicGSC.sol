@@ -19,7 +19,7 @@ contract LogicGSC {
     }
 
     function deposit(uint8 _domainID, address _recipient) external payable {
-        bytes memory data = abi.encode(_recipient, 20, msg.value);
+        bytes memory data = abi.encode(msg.value, 20, _recipient);
         IBridge(bridge).deposit(_domainID, resourceID, data);
     }
 }
