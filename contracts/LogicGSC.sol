@@ -22,5 +22,4 @@ contract Logic {
         bytes memory data = abi.encode(_recipient, msg.value, 20);
         IBridge(bridge).deposit(_domainID, resourceID, data);
     }
-
 }
