@@ -7,7 +7,7 @@ interface IBridge {
     function deposit(uint8 destinationDomainID, bytes32 resourceID, bytes calldata data) external payable;
 }
 
-contract Logic {
+contract LogicGSC {
     address public bridge;
     address public erc20Handler;
     bytes32 public resourceID;
