@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract WFRA is ERC20, ERC20Burnable, Ownable {
     constructor() ERC20("WFRA", "WFRA") {}
 
-    function mint(uint _amount) external {
-        _mint(msg.sender, _amount);
+    function mint() external payable {
+        _mint(msg.sender, msg.value);
     }
 }
