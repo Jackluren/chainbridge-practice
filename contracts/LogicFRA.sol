@@ -20,7 +20,7 @@ contract LogicFRA {
 
     function deposit(uint8 _domainID, uint _amount, address _recipient) external payable {
         bytes memory ra = abi.encode(_recipient, _amount);
-        bytes memory data = abi.encode(ra.length, _recipient, _amount);
+        bytes memory data = abi.encode(_amount, ra.length, _recipient);
 
         IBridge(bridge).deposit(_domainID, resourceID, data);
     }
