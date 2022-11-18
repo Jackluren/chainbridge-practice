@@ -15,7 +15,7 @@
 
 ## 部署
 ### 0.部署ERC20合约
-两条链上分别部署`contracts/WGSC.sol`和`contracts/WFRA.sol`。并调用对应的mint方法，把原生币转换合约币。
+两条链上分别部署`contracts/WGSC.sol`和`contracts/WFRA.sol`。并调用对应的mint方法，把原生币转换成合约币。
 
 ### 1.部署合约
 relayer地址需要用ChainBridge命令行生成。
