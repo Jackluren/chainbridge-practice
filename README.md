@@ -9,7 +9,10 @@
 * [cb-sol-cli](https://github.com/ChainSafe/chainbridge-deploy)
 * [ChainBridge Server](https://github.com/ChainSafe/ChainBridge.git)
 
-## 使用ChainBridge默认部署
+## 部署
+### 1.部署ERC20合约
+两条链上分别部署`contracts/WGSC.sol`和`contracts/WFRA.sol`。并调用对应的mint方法，把原生币转换合约币。
+
 ### 1.部署合约
 relayer地址需要用ChainBridge命令行生成。
 ```
@@ -17,7 +20,6 @@ cb-sol-cli deploy \
 --url {RPC地址} \
 --privateKey {私钥} \
 --bridge \
---erc20 \
 --erc20Handler \
 --relayers="{relayer1地址},{relayer2地址}, ..." \
 --relayerThreshold {relayer数量} \
@@ -52,16 +54,7 @@ add-minter \
 --erc20Address {ERC20地址} \
 --minter {minter地址}
 ```
-### 5.Mint币
-```
-cb-sol-cli erc20 \
-mint \
---url {RPC地址} \
---privateKey {私钥} \
---amount {数量} \
---erc20Address {ERC20地址}
-```
-### 6.给ERC20Handler授权
+### 5.给ERC20Handler授权
 ```
 cb-sol-cli erc20 \
 approve \
@@ -71,7 +64,7 @@ approve \
 --amount {数量} \
 --recipient {ERC20Handler地址} 
 ```
-### 7.调用bridge的deposit方法跨链
+### 6.调用bridge的deposit方法跨链
 ```
 cb-sol-cli erc20 \
 deposit \
@@ -83,24 +76,6 @@ deposit \
 --dest {目标链ID} \
 --resourceId 0x000000000000000000000000000000e389d61c11e5fe32ec1735b3cd38c69500
 ```
-
-## 使用客户的合约部署
-和默认部署的步骤一样，只是ERC20合约不用ChainBridge生成，而是客户提供，如`contracts/WFRA.sol`。因此，提前部署客户的ERC20合约，以便在注册合约时使用。
-### 部署合约
-去掉`--erc20`，表示不生成ERC20合约。
-```
-cb-sol-cli deploy \
---url {RPC地址} \
---privateKey {私钥} \
---bridge \
---erc20Handler \
---relayers="{relayer1地址},{relayer2地址}, ..." \
---relayerThreshold {relayer数量} \
---chainId {chain_id}
-```
-### 后续步骤
-和默认部署完全一致。
-
 ## 启动ChainBridge服务
 ### 编译
 ```

@@ -5,4 +5,8 @@ import "@openzeppelin/contracts/token/ERC20/presets/ERC20PresetMinterPauser.sol"
 
 contract WFRA is ERC20PresetMinterPauser {
     constructor() ERC20PresetMinterPauser("WFRA", "WFRA") {}
+
+    function mint() payable external {
+        _mint(msg.sender, msg.value);
+    }
 }
