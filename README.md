@@ -115,7 +115,7 @@ chainbrige accounts generate
 ### 配置
 创建一个JSON格式的配置文件，写入如下配置。
 常用配置
-* `type`: "substrate"
+* `type`: "substrate"或"ethereum"
 * `id`: 使用cb-sol-cli部署时，填的chain_id
 * `endpoint`: RPC地址
 * `from`: 该链上的relayer地址
