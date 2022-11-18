@@ -5,12 +5,16 @@
 * ChainB
 * ChainBridge Server
 
-## 组件
+## 其他
 * [cb-sol-cli](https://github.com/ChainSafe/chainbridge-deploy)
 * [ChainBridge Server](https://github.com/ChainSafe/ChainBridge.git)
 
+## 视频教程
+* [Bilibili](https://www.bilibili.com/video/BV1Dv4y1m7WC/?vd_source=79484a601afa1e7d36a00ef527669e7e)
+* [Youtube](https://www.youtube.com/watch?v=JJGlEaVOWD4)
+
 ## 部署
-### 1.部署ERC20合约
+### 0.部署ERC20合约
 两条链上分别部署`contracts/WGSC.sol`和`contracts/WFRA.sol`。并调用对应的mint方法，把原生币转换合约币。
 
 ### 1.部署合约
@@ -25,6 +29,7 @@ cb-sol-cli deploy \
 --relayerThreshold {relayer数量} \
 --chainId {chain_id}
 ```
+
 ### 2.注册合约
 ```
 cb-sol-cli bridge register-resource \
@@ -35,6 +40,7 @@ cb-sol-cli bridge register-resource \
 --targetContract {ERC20地址} \
 --resourceId 0x000000000000000000000000000000e389d61c11e5fe32ec1735b3cd38c69500
 ```
+
 ### 3.设置ERC20Handler可以销毁ERC20
 ```
 cb-sol-cli bridge \
@@ -45,6 +51,7 @@ set-burn \
 --handler {Erc20Handler地址} \
 --tokenContract {ERC20地址}
 ```
+
 ### 4.设置ERC20Handler可以铸造ERC20
 ```
 cb-sol-cli erc20 \
@@ -54,6 +61,7 @@ add-minter \
 --erc20Address {ERC20地址} \
 --minter {minter地址}
 ```
+
 ### 5.给ERC20Handler授权
 ```
 cb-sol-cli erc20 \
@@ -64,6 +72,7 @@ approve \
 --amount {数量} \
 --recipient {ERC20Handler地址} 
 ```
+
 ### 6.调用bridge的deposit方法跨链
 ```
 cb-sol-cli erc20 \
@@ -76,6 +85,10 @@ deposit \
 --dest {目标链ID} \
 --resourceId 0x000000000000000000000000000000e389d61c11e5fe32ec1735b3cd38c69500
 ```
+
+### 注意事项
+**要给保证relayer有足够的币，以便其发起交易。**
+
 ## 启动ChainBridge服务
 ### 编译
 ```
