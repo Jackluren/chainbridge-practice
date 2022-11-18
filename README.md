@@ -85,9 +85,9 @@ deposit \
 ```
 
 ## 使用客户的合约部署
-和默认部署的步骤一样，只是ERC20合约不用ChainBridge生成，而是客户提供。
+和默认部署的步骤一样，只是ERC20合约不用ChainBridge生成，而是客户提供，如`contracts/WFRA.sol`。
 ### 部署合约
-去掉`--erc20`，表示不生成ERC20合约。
+去掉`--erc20`，表示不生成ERC20合约。因此，应先部署客户的ERC20合约。
 ```
 cb-sol-cli deploy \
 --url {RPC地址} \
