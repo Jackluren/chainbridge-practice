@@ -10,8 +10,12 @@
 * [ChainBridge Server](https://github.com/ChainSafe/ChainBridge.git)
 
 ## 视频教程
-* [Bilibili](https://www.bilibili.com/video/BV1Dv4y1m7WC/?vd_source=79484a601afa1e7d36a00ef527669e7e)
-* [Youtube](https://www.youtube.com/watch?v=JJGlEaVOWD4)
+* **Bilibili**
+  * [01-使用默认的ERC20合约](https://www.bilibili.com/video/BV1QG4y147pN/?spm_id_from=333.999.0.0) 
+  * [02-自写ERC20合约包装原生币](https://www.bilibili.com/video/BV1Dv4y1m7WC/?spm_id_from=333.999.0.0)
+* **YouTube**
+  * [01-使用默认的ERC20合约](https://www.youtube.com/watch?v=n2VABdFXlu4&list=PL9aoThVN5PLlJ-jVR0seDFxy5h25cdgum&index=1)
+  * [02-自写ERC20合约包装原生币](https://www.youtube.com/watch?v=JJGlEaVOWD4&list=PL9aoThVN5PLlJ-jVR0seDFxy5h25cdgum&index=2)
 
 ## 部署
 ### 0.部署ERC20合约
